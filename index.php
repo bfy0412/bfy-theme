@@ -1,0 +1,1 @@
+<?php get_header();?>	<div id="container">		<div id="content">			<?php get_template_part( 'content', '' ); ?><!--页面主要内容，需要多次调用，此模板文件非官方模板，承担主循环-->		</div>		<?php get_sidebar(); ?><!--侧边栏-->	</div><?php get_footer();?>
