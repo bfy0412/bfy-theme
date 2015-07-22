@@ -111,4 +111,51 @@
 	}
 	//以上函数主要用在content.php主循环中
 	add_theme_support( 'post-thumbnails' );//特色图像设置
+	add_theme_support( 'post-formats', array( 'aside', 'image', 'link', 'status', 'video'));
+		//面包屑导航
+	function bfy_path() {
+		global $cat, $s, $post;
+		echo '<div id="path">您现在的位置：<ol><li class="home"><a href="' . get_bloginfo('url') . '">首页</a></li>';
+		if((is_single() || is_category() ) && !is_attachment() ) {
+		$categorys = get_the_category();
+		$category = $categorys[0];
+		$category_id = $category->term_id;
+		if(is_category() ) $category_id = $cat;
+		$category_name = get_category_parents($category_id, false, ',');
+		$category_name_group = explode(',', $category_name);
+		foreach ($category_name_group as $cat_name) {
+		if($cat_name) {
+		$cat_ID = get_cat_ID($cat_name);
+		$cat_url = get_category_link( $cat_ID );
+		if(is_single() || (is_category() && $cat_ID != $cat) ) echo '<li><a href="' . $cat_url . '">' . $cat_name . '</a></li>';
+		if(is_category() && $cat_ID == $cat) echo '<li>' . $cat_name . '</li>'; 
+		}
+		}
+		if(is_single() || is_date() ) echo '<li>' . the_title_attribute('echo=0') . '</li>';
+		}
+		if(is_page() ) {
+		if ($post->post_parent) {
+		$ancestors = array_reverse(get_post_ancestors($post->ID) );
+		foreach ( $ancestors as $ancestor ) {
+		$page_name = get_the_title($ancestor);
+		$page_url = get_permalink($ancestor);
+		echo '<li><a href="' . $page_url . '">' . $page_name . '</a></li>';
+		}
+		}
+		echo '<li>' . the_title('', '', false) . '</li>';
+		}
+		if (is_search() ) echo '<li>"' . $s . '"的搜索结果</li>';
+		if(is_tag() ) echo '<li>' . single_tag_title('', false) . '</li>';
+		if(is_404() ) echo '<li>404页面</li>';
+		if(is_attachment() ) echo '<li>附件</li><li>' . the_title_attribute('echo=0') . '</li>';
+		echo '</ol></div>';
+	}
+	//随机文章
+	function bfy_random_posts($limit=10, $count=32) {
+		$rand_posts = get_posts('numberposts=' . $limit .'&orderby=rand');
+		foreach( $rand_posts as $post ) {
+		echo '<li><a href="' . get_permalink($post->ID) . '" rel="bookmark">' . wp_trim_words($post->post_title,$count,'') . '</a></li>';
+		}
+	}
+
 ?>
