@@ -20,16 +20,17 @@
 			</div>
 			<div id="nav">
 				<ul class="page clear">
-					<li><a href="<?php bloginfo('url'); ?>">首页</a></li>
+					<li><a href="<?php bloginfo('url'); ?>">前端技术博客</a></li>
 					<li><a href="http://www.douban.com/people/bfy0412/" target="_blank">我的豆瓣</a></li>
 					<li><a href="http://www.zhihu.com/people/bifangya" target="_blank">我的知乎</a></li>
 					<li><a href="https://github.com/bfy0412" target="_blank">My Github</a></li>
 					<?php wp_list_pages('title_li='); ?><!--以列表方式输出所有页面的链接，自动生成li标签，默认只有首页-->
 				</ul>
-				<p style="margin-left:45px;">博客分类</p>
-				<ul class="cat">
-					<?php wp_list_categories('orderby=id&title_li=&show_count=0&hide_empty=0&use_desc_for_title='); ?><!--以列表形式输出所有分类的链接，自动生成li标签-->
-				</ul>
+			</div>
+			<div class="nav-search">
+				<form method="get" action="<?php bloginfo('home'); ?>">
+					<input type="search" name="s" value="<?php echo wp_specialchars($s, 1); ?>" size="20" /><input type="submit" class="submit-search" value="搜索" />
+				</form>
 			</div>
 		</section>
 

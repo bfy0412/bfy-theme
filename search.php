@@ -7,20 +7,20 @@
 	$keywords = wp_specialchars($s, 1);
 	?>
 	<?php if ($count==0) : ?>
-	<h1>ËÑË÷½á¹û</h1>
+	<h1>æœç´¢ç»“æžœ</h1>
 	<div class="error">
-	<p>ºÜÒÅº¶£¬Î´ÕÒµ½ÓëÄúËÑË÷µÄ¹Ø¼ü´ÊÏà¹ØµÄÄÚÈÝ£¬¿ÉÄÜÊÇ±¾Õ¾»¹Ã»ÓÐÕâ·½ÃæµÄÄÚÈÝ»òÊÇÄúÊäÈëµÄ¹Ø¼ü´Ê²»¹»×¼È·£¬Äú¿ÉÒÔ³¢ÊÔÔÚÏÂÃæµÄËÑË÷¿òÖÐÊ¹ÓÃÐÂµÄ¹Ø¼ü´ÊÖØÐÂËÑË÷£º</p>
+	<p>å¾ˆé—æ†¾ï¼Œæœªæ‰¾åˆ°ä¸Žæ‚¨æœç´¢çš„å…³é”®è¯ç›¸å…³çš„å†…å®¹ï¼Œå¯èƒ½æ˜¯æœ¬ç«™è¿˜æ²¡æœ‰è¿™æ–¹é¢çš„å†…å®¹æˆ–æ˜¯æ‚¨è¾“å…¥çš„å…³é”®è¯ä¸å¤Ÿå‡†ç¡®ï¼Œæ‚¨å¯ä»¥å°è¯•åœ¨ä¸‹é¢çš„æœç´¢æ¡†ä¸­ä½¿ç”¨æ–°çš„å…³é”®è¯é‡æ–°æœç´¢ï¼š</p>
 	<div class="nav-search">
 	<form method="get" action="<?php bloginfo('home'); ?>">
-	<input type="search" name="s" value="<?php echo wp_specialchars($s, 1); ?>" size="20" /><input type="submit" class="submit-search" value="ËÑË÷" />
+	<input type="search" name="s" value="<?php echo wp_specialchars($s, 1); ?>" size="20" /><input type="submit" class="submit-search" value="æœç´¢" />
 	</form>
 	</div>
-	<p>Èç¹ûÕâÑùÈÔ²»ÄÜ½â¾öÄúµÄÎÊÌâ£¬Çë·¢ËÍÓÊ¼þÖÁ<a href="mailto:<?php bloginfo('admin_email'); ?>"><?php bloginfo('admin_email'); ?></a>£¬<?php echo get_the_author_meta('nickname',1); ?>ÔÚÊÕµ½ÄúµÄÀ´ÓÊºó»áµÚÒ»Ê±¼ä»Ø¸´£¬·Ç³£¸ÐÐ»ÄúµÄÖ§³Ö£¡</p>
+	<p>å¦‚æžœè¿™æ ·ä»ä¸èƒ½è§£å†³æ‚¨çš„é—®é¢˜ï¼Œè¯·å‘é€é‚®ä»¶è‡³<a href="mailto:<?php bloginfo('admin_email'); ?>"><?php bloginfo('admin_email'); ?></a>ï¼Œ<?php echo get_the_author_meta('nickname',1); ?>åœ¨æ”¶åˆ°æ‚¨çš„æ¥é‚®åŽä¼šç¬¬ä¸€æ—¶é—´å›žå¤ï¼Œéžå¸¸æ„Ÿè°¢æ‚¨çš„æ”¯æŒï¼</p>
 	</div>
 	<?php else : ?>
 	<div class="header">
-	<h1>ËÑË÷½á¹û</h1>
-	<p><?php echo '¹²ÕÒµ½º¬ÓÐ¡°' . $keywords . '¡±µÄÎÄÕÂ' . $count . 'Æª'; ?></p>
+	<h1>æœç´¢ç»“æžœ</h1>
+	<p><?php echo 'å…±æ‰¾åˆ°å«æœ‰â€œ' . $keywords . 'â€çš„æ–‡ç« ' . $count . 'ç¯‡'; ?></p>
 	</div>
 	<?php get_template_part( 'content', '' ); ?>
 	<?php endif; ?>

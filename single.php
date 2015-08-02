@@ -1,5 +1,6 @@
 <?php get_header(); ?>
 <div id="container">
+	<?php get_sidebar(); ?>
 	<div id="content">
 		<?php while (have_posts()) : the_post(); ?>
 			<div id="article-content">
@@ -23,5 +24,5 @@
 			<?php comments_template( '', true ); ?>
 		<?php endwhile; ?>
 	</div>
-	 <?php get_sidebar(); ?>
 </div>
+<?php get_footer();?>
