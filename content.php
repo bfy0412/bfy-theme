@@ -2,7 +2,7 @@
 <?php if ( have_posts() ) : ?>
 	<?php while( have_posts() ) : the_post(); ?>
 		<div class="article-content entry">
-			<h2<?php if( is_sticky() ) echo ' class="sticky"'; ?>><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title_attribute(); ?></a></h2>
+			<h4<?php if( is_sticky() ) echo ' class="sticky"'; ?>><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title_attribute(); ?></a></h4>
 			<div class="entry-content">
 				<?php if ( post_password_required() ) : ?>
 				<?php the_content(); ?>
@@ -10,7 +10,7 @@
 					<?php if ( has_post_thumbnail() ) : ?>
 						<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail( array(150,150) ); ?></a><!--设置特色图像-->
 				<?php endif; ?>
-					<p class="summary"><?php echo content_excerpt(41); ?></p><!--文章摘要，参数为摘要字数-->
+					<p class="summary"><?php echo content_excerpt(200); ?></p><!--文章摘要，参数为摘要字数-->
 				<?php endif; ?>
 			</div>
 			<div class="meta">

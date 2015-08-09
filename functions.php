@@ -55,7 +55,7 @@
 		return trim($str);
 }
 	//摘要
-	function content_excerpt($count=200, $string='') {
+	function content_excerpt($count=400, $string='') {
 		global $post;
 		$content = apply_filters('the_content', $post->post_content);
 		$content_text = delete_html($content);
