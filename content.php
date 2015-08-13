@@ -2,7 +2,7 @@
 <?php if ( have_posts() ) : ?>
 	<?php while( have_posts() ) : the_post(); ?>
 		<div class="article-content entry">
-			<h4<?php if( is_sticky() ) echo ' class="sticky"'; ?>><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title_attribute(); ?></a></h4>
+			<h3<?php if( is_sticky() ) echo ' class="sticky"'; ?>><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title_attribute(); ?></a></h3>
 			<div class="entry-content">
 				<?php if ( post_password_required() ) : ?>
 				<?php the_content(); ?>
@@ -14,7 +14,7 @@
 				<?php endif; ?>
 			</div>
 			<div class="meta">
-				<span class="category">分类：<?php the_category(' ', ''); ?></span>
+				<span class="category">分类：<?php the_category(' ', ''); ?></span>|&nbsp;
 				<?php the_tags('<span class="tag">标签：', ',', '</span>'); ?>
 				<span class="date">发表于：<?php the_time('Y-m-d'); ?></span>
 			</div><!--文章元数据-->
