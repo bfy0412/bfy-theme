@@ -5,7 +5,7 @@
 		<?php while (have_posts()) : the_post(); ?>
 			<div id="article-content">
 				<div class="header">
-					<h1><?php the_title_attribute(); ?></h1>
+					<h2><?php the_title_attribute(); ?></h2>
 					<div class="meta-data">
 						<span class="date">发表于：<?php the_time('Y-m-d'); ?></span>
 						<span class="author">作者：<?php the_author_posts_link(); ?></span>
