@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="utf-8">
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-		<link type="image/x-icon" href="home_icon.png" rel="icon">
+		<link type="image/x-icon" href="./home_icon.png" rel="icon">
 		<title><?php echo trim(wp_title('',0)); if(!is_home()) echo ' - '; bloginfo( 'name' ); ?></title><!--每个页面输出不同的标题，加上站点名称-->
 		<link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css" media="screen" />
 		<?php wp_head(); ?><!--作为插件的预留钩子-->
@@ -25,7 +25,7 @@
 				</ul>
 				<div class="nav-search">
 					<form method="get" action="<?php bloginfo('home'); ?>">
-						<input type="search" name="s" value="<?php echo wp_specialchars($s, 1); ?>" size="20" /><input type="submit" class="submit-search" value="搜索" />
+						<input id="s" type="search" name="s" value="<?php echo wp_specialchars($s, 1); ?>" size="20" /><input id="search-btn" type="submit" class="submit-search" value="搜索" />
 					</form>
 				</div>
 			</div>
