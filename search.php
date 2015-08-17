@@ -1,5 +1,6 @@
 <?php get_header(); ?>
 	<div id="container">
+	 <?php get_sidebar(); ?>
 	<div id="content">
 	<?php 
 	$allsearch = new WP_Query("s=$s&showposts=-1");
@@ -25,6 +26,6 @@
 	<?php get_template_part( 'content', '' ); ?>
 	<?php endif; ?>
 	</div>
-	 <?php get_sidebar(); ?>
+	
 	</div>
 <?php get_footer(); ?>
