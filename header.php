@@ -2,6 +2,11 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="utf-8">
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0">
+		<meta http-equiv="description" content="怀素" />
+		<meta name="description" content="怀素的前端开发技术博客" />
+		<meta name="keywords" content="怀素, 个人博客, 个人网站, web前端,JavaScript,css,html" />
+		<meta name="author" content="怀素,huaisu" />
 		<link type="image/x-icon" href="./home_icon.png" rel="icon">
 		<title><?php echo trim(wp_title('',0)); if(!is_home()) echo ' - '; bloginfo( 'name' ); ?></title><!--每个页面输出不同的标题，加上站点名称-->
 		<link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css" media="screen" />
