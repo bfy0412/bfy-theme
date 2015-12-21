@@ -26,7 +26,7 @@
 					<?php wp_list_pages('title_li='); ?><!--以列表方式输出所有页面的链接，自动生成li标签，默认只有首页-->
 					<li><a href="http://www.douban.com/people/bfy0412/" target="_blank">我的豆瓣</a></li>
 					<li><a href="http://www.zhihu.com/people/bifangya" target="_blank">我的知乎</a></li>
-					<li><a href="https://github.com/bfy0412" target="_blank">My Github</a></li>
+					<li><a href="https://github.com/bfy0412" target="_blank">Github</a></li>
 				</ul>
 				<div class="nav-search">
 					<form method="get" action="<?php bloginfo('home'); ?>">
